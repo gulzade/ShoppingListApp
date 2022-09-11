@@ -24,7 +24,7 @@ class ShoppingList: UIViewController, AddProductDelegate {
         shoppingList.append(Product(productName: "Carrot", productWeight: "2 KG", productImage: UIImage(named: "Carrot")!))
         shoppingList.append(Product(productName: "Banana", productWeight: "3 KG", productImage: UIImage(named: "Banana")!))
         shoppingList.append(Product(productName: "Paprica", productWeight: "1 KG", productImage: UIImage(named: "Paprica")!))
-        self.tableView.reloadData()
+
         
     }
   

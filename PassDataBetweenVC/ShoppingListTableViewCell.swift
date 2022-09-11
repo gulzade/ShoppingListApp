@@ -16,10 +16,7 @@ class ShoppingListTableViewCell: UITableViewCell {
     var shoppingProduct:Product?
     override func awakeFromNib() {
         super.awakeFromNib()
-        imageView?.layer.cornerRadius = 40
-        imageView?.layer.borderColor = UIColor.yellow.cgColor
-        imageView?.layer.borderWidth = 3.0
-        imageView?.layer.borderColor = UIColor.gray.cgColor
+     
     }
     
     override func setSelected(_ selected: Bool, animated: Bool) {

@@ -7,6 +7,7 @@
 
 import UIKit
 
+//Delegate Pattern
 
 protocol AddProductDelegate {  //custom protocol for product passing
     func addProduct(product: Product)
@@ -20,6 +21,7 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var plantWeight: UITextField!
     @IBOutlet weak var productImageView: UIImageView!
     @IBOutlet weak var backgroundView: UIView!
+    @IBOutlet weak var selectImageBackgroundView: UIView!
     
     var delegate: AddProductDelegate? = nil // Delegate variable
     
@@ -32,6 +34,12 @@ class AddProductViewController: UIViewController {
         productImageView.addGestureRecognizer(imageTapRecognizer)
         
         backgroundView.layer.cornerRadius = 40
+        selectImageBackgroundView.layer.cornerRadius = 40 //imageBackgroundColor
+        selectImageBackgroundView.layer.borderColor = UIColor(named: "backgroundColor")?.cgColor
+        selectImageBackgroundView.backgroundColor = UIColor.white
+        selectImageBackgroundView.layer.borderWidth = 2.5
+        
+        
     }
  
     @objc func selectImage (){
