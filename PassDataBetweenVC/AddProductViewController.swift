@@ -19,17 +19,29 @@ class AddProductViewController: UIViewController {
     @IBOutlet weak var plantName: UITextField!
     @IBOutlet weak var plantWeight: UITextField!
     @IBOutlet weak var productImageView: UIImageView!
+    @IBOutlet weak var backgroundView: UIView!
     
     var delegate: AddProductDelegate? = nil // Delegate variable
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
+        //Recognizers
         
+        productImageView.isUserInteractionEnabled = true
+        let imageTapRecognizer = UITapGestureRecognizer(target: self, action: #selector(selectImage))
+        productImageView.addGestureRecognizer(imageTapRecognizer)
+        
+        backgroundView.layer.cornerRadius = 40
+    }
+ 
+    @objc func selectImage (){
+        let picker = UIImagePickerController()
+                picker.delegate = self
+                picker.sourceType = .photoLibrary
+                picker.allowsEditing = true
+                present(picker, animated: true, completion: nil)
     }
     
-
-   
     @IBAction func addProduct(_ sender: Any) {
         if self.delegate != nil && self.plantName.text != nil &&  self.plantWeight.text != nil { //Check if the delegate is not nil. If the delegate is nil then that means its not yet authorized to use this function to send data.
         if let planetName = plantName.text, let plantWeight = plantWeight.text {
@@ -55,10 +67,6 @@ class AddProductViewController: UIViewController {
 }
 
 extension AddProductViewController: UIImagePickerControllerDelegate, UINavigationControllerDelegate {
-    
-    func imagePickerControllerDidCancel(_ picker: UIImagePickerController) {
-        picker.dismiss(animated: true, completion: nil)
-    }
     
     func imagePickerController(_ picker: UIImagePickerController, didFinishPickingMediaWithInfo info: [UIImagePickerController.InfoKey : Any]) {
         

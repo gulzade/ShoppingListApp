@@ -19,9 +19,15 @@ class ShoppingList: UIViewController, AddProductDelegate {
         
         tableView.delegate = self
         tableView.dataSource = self
+        
+        shoppingList.append(Product(productName: "Watermelon", productWeight: "18 KG", productImage: UIImage(named: "Watermelon")!))
+        shoppingList.append(Product(productName: "Carrot", productWeight: "2 KG", productImage: UIImage(named: "Carrot")!))
+        shoppingList.append(Product(productName: "Banana", productWeight: "3 KG", productImage: UIImage(named: "Banana")!))
+        shoppingList.append(Product(productName: "Paprica", productWeight: "1 KG", productImage: UIImage(named: "Paprica")!))
         self.tableView.reloadData()
         
     }
+  
     
     func addProduct(product: Product) {
         
@@ -57,6 +63,14 @@ extension ShoppingList :  UITableViewDelegate, UITableViewDataSource {
         cell.productNameTextField.text = plant.productName!
         cell.productWeight.text = plant.productWeight!
         cell.productImageView.image = plant.productImage!
+
+        
+        cell.productNameTextField.layer.cornerRadius = 40
+        cell.productWeight.layer.cornerRadius = 40
+        
+        cell.productImageView.layer.cornerRadius = 40
+        cell.productImageView.layer.borderColor = UIColor.systemYellow.cgColor// UIColor(named: "backgroundColor")?.cgColor
+        cell.productImageView.layer.borderWidth = 2.5
         print(plant.productName!,plant.productWeight!)
         
         return cell
