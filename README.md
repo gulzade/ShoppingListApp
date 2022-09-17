@@ -8,12 +8,3 @@
 https://user-images.githubusercontent.com/32436596/189530667-e8ba9a3a-a7b1-4d5c-8ec7-3ec9df50e785.mp4
 
 
-Homework-1
-
-İki tane sayfa olucak
-
-İlk sayfadan ikinci sayfaya gidilicek
-
-İkinci sayfada textfieldlar olucak buraya girilen verileri ilk sayfada gösterilecek
-
-İster delegeta ister notification ister clouser
